@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+.env
+*.bak
+ai-agent/heal-data/*
+!ai-agent/heal-data/.gitkeep
+ai-agent/plans/*
+!ai-agent/plans/.gitkeep

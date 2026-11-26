@@ -1,0 +1,23 @@
+{
+  "name": "playwright_ai_agent_project",
+  "version": "1.0.0",
+  "description": "Playwright + AI writer agent (reads the page, writes the test) + AI healer agent (repairs locators)",
+  "scripts": {
+    "test": "npx playwright test --project=web --workers=1",
+    "test:headed": "npx playwright test --project=web --workers=1 --headed",
+    "fill-form": "npx playwright test tests/fill-form.spec.js --project=web --headed --workers=1",
+    "run:generated": "npx playwright test --project=generated --headed --workers=1",
+    "agent:write": "node ai-agent/cli.js write",
+    "demo": "npx playwright test --project=demo --workers=1 -g \"v1|v2\"",
+    "agent:demo": "npx playwright test tests/agent-demo.spec.js tests/agent-demo-negative.spec.js --project=demo --workers=1",
+    "ai:ping": "node ai-agent/cli.js ping",
+    "ai:heal:report": "node ai-agent/cli.js heal-report",
+    "ai:heal:apply": "node ai-agent/healer/apply-heals.js",
+    "report": "npx playwright show-report",
+    "negative": "npx playwright test tests/negative-form.spec.js --project=web --headed --workers=1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}
